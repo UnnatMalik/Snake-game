@@ -1,6 +1,5 @@
 
 # Snake-Game🐍🎮
-
 A simple snake game made in python using Turtle libraries .
 It is made with concept object oriented programming and The game  is divided into 4 different segments 
 
