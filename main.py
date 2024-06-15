@@ -12,14 +12,14 @@ screen.title("Snake game")
 screen.tracer(0)
 
 #snake class
-nigga = Snake()
+snake = Snake()
 food = Food()
 score = Score()
 #controls for the snake
-screen.onkey(fun=nigga.up, key="w")
-screen.onkey(fun=nigga.down, key="s")
-screen.onkey(fun=nigga.left, key="a")
-screen.onkey(fun=nigga.right, key="d")
+screen.onkey(fun=snake.up, key="w")
+screen.onkey(fun=snake.down, key="s")
+screen.onkey(fun=snake.left, key="a")
+screen.onkey(fun=snake.right, key="d")
 screen.listen()
 
 check = True
@@ -29,21 +29,21 @@ while check :
     i += 1
     screen.update()
     time.sleep(0.1)
-    nigga.move()
-    if nigga.head.distance(food) < 15:
+    snake.move()
+    if snake.head.distance(food) < 15:
         food.new_food()
-        nigga.extend()
+        snake.extend()
         score.score_update()
-    if nigga.head.xcor() > 340 or nigga.head.xcor() < -340 :
+    if snake.head.xcor() > 340 or snake.head.xcor() < -340 :
         score.game_over()
         check = False
 
-    if nigga.head.ycor() > 340 or nigga.head.ycor() < -340 :
+    if snake.head.ycor() > 340 or snake.head.ycor() < -340 :
         score.game_over()
         check = False
     
-    for segment in nigga.snakes[1:]:
-        if nigga.head.distance(segment) < 10 :
+    for segment in snake.snakes[1:]:
+        if snake.head.distance(segment) < 10 :
             score.game_over()
             check = False
             break
