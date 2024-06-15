@@ -1,7 +1,6 @@
+# Snake-game
+This is a simple snake game made in python using the turtle library.
 
-# Snake-Game🐍🎮
-
-A simple snake game made in python using Turtle libraries .
 It is made with concept object oriented programming and The game  is divided into 4 different segments 
 
 
@@ -25,6 +24,3 @@ What did I learn while building this project?
 ## In-game picture
 
 ![Screenshot 2024-05-22 183332](https://github.com/UnnatMalik/Snake-game/assets/160745526/28e87b5d-52c2-498a-9313-21fc155b38ea)
-
-
-
