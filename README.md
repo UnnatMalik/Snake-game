@@ -3,6 +3,8 @@ This is a simple snake game made in python using the turtle library.
 
 It is made with concept object oriented programming and The game  is divided into 4 different segments 
 
+It can save High-score in a data.txt file 
+
 
 ## Components
 
