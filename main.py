@@ -4,6 +4,8 @@ from Food import Food
 from Score import Score
 import time
 
+        
+
 # window setup
 screen = Screen()
 screen.bgcolor("black")
@@ -35,17 +37,20 @@ while check :
         snake.extend()
         score.score_update()
     if snake.head.xcor() > 340 or snake.head.xcor() < -340 :
-        score.game_over()
-        check = False
-
-    if snake.head.ycor() > 340 or snake.head.ycor() < -340 :
-        score.game_over()
-        check = False
+        score.High_score()
+        time.sleep(2)
+        snake.reset()
     
+    if snake.head.ycor() > 340 or snake.head.ycor() < -340 :
+        score.High_score()
+        time.sleep(2)
+        
+        snake.reset()
     for segment in snake.snakes[1:]:
         if snake.head.distance(segment) < 10 :
-            score.game_over()
-            check = False
-            break
+            score.High_score()
+            time.sleep(2)
+            
+            snake.reset()
 
 screen.exitonclick()

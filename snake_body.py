@@ -18,7 +18,6 @@ class Snake:
         self.create()
         self.move()
         self.head = self.snakes[0]
-
     # snake creation
     def create(self):
         for i in POSITION:
@@ -26,11 +25,11 @@ class Snake:
 
     def create_new(self,i):
             snake = Turtle(shape="square")
-            snake.color("White")
+            snake.color("Green")
             snake.penup()
             snake.goto(i)
             self.snakes.append(snake)
-            
+    # to elongate the snake
     def extend(self):
         self.create_new(self.snakes[-1].position())
     # to keep moving the snake
@@ -40,7 +39,13 @@ class Snake:
             y = self.snakes[num - 1].ycor()
             self.snakes[num].goto(x, y)
         self.snakes[0].fd(MOVE)
-    # to elongate the snake
+    
+    def reset(self):
+        for seg in self.snakes:
+            seg.goto(1000,1000)
+        self.snakes.clear()
+        self.create()
+        self.head = self.snakes[0]
     
     # to control snake direction
     def left(self):
